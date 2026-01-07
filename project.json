@@ -4,6 +4,7 @@
   "description": "proiect facturi\r\n",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Mail.Activities": "[2.5.10]",
     "UiPath.System.Activities": "[25.10.4]"
   },
   "webServices": [],
