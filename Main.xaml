@@ -100,17 +100,21 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="961,1284" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="961,1507" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umao:OutlookMailMessagesTrigger BodyFilter="{x:Null}" Cc="{x:Null}" From="{x:Null}" SubjectFilter="{x:Null}" To="{x:Null}" Account="BicicletePentruTine@Outlook.com" BodyIsBuilderTabModified="False" BodyRegexOption="None" DisplayName="Outlook Desktop Mail Messages Trigger" Enabled="True" sap:VirtualizedContainerService.HintSize="522,197" sap2010:WorkflowViewState.IdRef="OutlookMailMessagesTrigger_1" Importance="Any" MailFolder="Inbox" MarkAsRead="False" SchedulingMode="Sequential" SubjectIsBuilderTabModified="False" SubjectRegexOption="None" TriggerId="45b8bcfd-7785-4a39-a9fc-38270530eb0d" WhenOutlookIsClosed="Open" />
-    <Sequence sap:VirtualizedContainerService.HintSize="522,1033" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <umao:OutlookMailMessagesTrigger BodyFilter="{x:Null}" Cc="{x:Null}" From="{x:Null}" SubjectFilter="{x:Null}" To="{x:Null}" Account="BicicletePentruTine@Outlook.com" BodyIsBuilderTabModified="False" BodyRegexOption="None" DisplayName="Outlook Desktop Mail Messages Trigger" Enabled="True" sap:VirtualizedContainerService.HintSize="558,197" sap2010:WorkflowViewState.IdRef="OutlookMailMessagesTrigger_1" Importance="Any" MailFolder="Inbox" MarkAsRead="False" SchedulingMode="Sequential" SubjectIsBuilderTabModified="False" SubjectRegexOption="None" TriggerId="45b8bcfd-7785-4a39-a9fc-38270530eb0d" WhenOutlookIsClosed="Open" />
+    <Sequence sap:VirtualizedContainerService.HintSize="558,1256" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="emails" />
       </Sequence.Variables>
@@ -119,7 +123,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="BicicletePentruTine@Outlook.com" ConnectionMode="Undefined" DisplayName="Get Outlook Desktop Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="488,123" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[emails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="5" UseISConnection="False">
+      <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="BicicletePentruTine@Outlook.com" ConnectionMode="Undefined" DisplayName="Get Outlook Desktop Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="524,123" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[emails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="5" UseISConnection="False">
         <ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
           <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
             <usau:BackupSlot.BackupValues>
@@ -128,41 +132,68 @@
           </usau:BackupSlot>
         </ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
       </ui:GetOutlookMailMessages>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="488,827" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="524,1050" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,705" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,928" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="452,641" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="488,864" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,705" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[currentMailMessage.Attachments.&#xD;&#xA;    Any(Function(a) a.Name.ToLower.EndsWith(&quot;.pdf&quot;))]" sap:VirtualizedContainerService.HintSize="452,641" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="[“Hello, this inbox Is used only For invoice submissions. Please resend your email With a PDF invoice attached. Messages without invoices cannot be processed. Thank you.”]" DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_2" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
+                            <ui:ReplyToOutlookMailMessage.Files>
+                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                            </ui:ReplyToOutlookMailMessage.Files>
+                          </ui:ReplyToOutlookMailMessage>
+                          <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_2" MailFolder="Deleted Items" MailMessage="[currentMailMessage]" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xD;&#xA;This inbox only accepts messages From authorized senders.&#xD;&#xA;Your message was Not processed.&#xD;&#xA;Thank you For your understanding." DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
+                    <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="Hello,&#xD;&#xA;This inbox only accepts messages From authorized senders.&#xD;&#xA;Your message was Not processed.&#xD;&#xA;Thank you For your understanding." DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_1" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
                       <ui:ReplyToOutlookMailMessage.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                       </ui:ReplyToOutlookMailMessage.Files>
                     </ui:ReplyToOutlookMailMessage>
-                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="Deleted Items" MailMessage="[currentMailMessage]" />
+                    <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="452,170" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_1" MailFolder="Deleted Items" MailMessage="[currentMailMessage]" />
                   </Sequence>
                 </If.Else>
               </If>
