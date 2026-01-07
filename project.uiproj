@@ -1,0 +1,6 @@
+{
+  "Name": "Postare facturi sap",
+  "ProjectType": "Process",
+  "Description": "proiect facturi\r\n",
+  "MainFile": "Main.xaml"
+}
