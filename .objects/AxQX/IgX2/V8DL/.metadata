@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Windows PowerShell",
+  "Type": "Screen",
+  "Id": "V8DLt9iqRku07dEH1pb0lQ",
+  "Reference": "9PJs9vvyEk6stKsKr1m0xA/V8DLt9iqRku07dEH1pb0lQ",
+  "ParentRef": "9PJs9vvyEk6stKsKr1m0xA/IgX2r7IWo0-dMp4ojpRy2A",
+  "Created": "2026-01-09T19:21:48.0677404Z",
+  "Updated": "2026-01-09T19:21:48.0677404Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

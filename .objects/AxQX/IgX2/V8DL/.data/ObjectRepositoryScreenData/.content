@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="vlZzWdxs-USrHD_roq8N0g" Reference="9PJs9vvyEk6stKsKr1m0xA/V8DLt9iqRku07dEH1pb0lQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="78, 78, 873, 739" ContentHash="LvShXEld80qPivqIOLGtpg" FilePath="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQjSURBVFhH7ZZZT1NREMf5CHwUHkw0PrCDskmVYPRNTcBEBYoioIgWrKzWLSbqE4iiCSEKJiaIEMBdRJCiggsUZassVgTZdZw5S++9PZdFn/knk1to7/nNmTPzv9dvXesyU2BK056wzA6IOuXyiT7YiiGva46T+msvXnshOn8A4grGLAJpVGhGmyfh4h+QsePCEuw4vwDbHXNgOTsDltJpiC/5CduKf0Bc0QQtBLFnvkGMfQRiTg+xxaNsX1jSBNuS+wm2nPgAkTndEHHsHURkd+HnHogrHLcJpCbcfQDdqMDPzUF6BSagg28r+k6LIHwUYu1uhA9zeN4y8OMcHp7Vyf7G+60Cq4nKTwuzBC789sL7Rv8AqbFrwQgv0MMHITrvK+6+3xx+jMP58fbhOp4AgdWECZQRlMMXET4PFscMg0s1OudXhtN5535G+EdTeNjR1+yoBNIo/NKlh293zOK5/4J7bQsCz9XgnMXSLwM/KeE9EHn8PcLfQni2E8Iz3yC8HUIzXlEFmwRSU2Bqsz9l7AuPL52C+OJJLP+8wHOVVlPDmcBzTeBZEt7GqoBrqg0YlNpiodIo8JJJzNiDZZ9gO9frXM3EP8FDj7SyvsBmVkcwKO2xDRtDheP/CC7HraHT2BOOu2Oi6RB+wgSeqcFDDr9gVcNx9hdYTSFHXjbJWV8OLmfd2T8n8Fxn77i1jke4HDcGP6rBg9OfUQO7BNIoynitRpNYNAC9I8aeSDpPO9dmXXZ8aIYGpyuOdZlAagpJfx5A57i60Qx6jaa+Y0qgua5Ut5nAXwFWFnB9CLY+YUeCY64aEGZmpV0qcJNZP3h1WNn9z+k5iEq7bQ4/TPCngD3GmhWnTDUgPKMyBl4F7qgZh+nZ3wLL1djaC4HJN7HET1eE45SxfhJIo7B0LgWuM5rE4kF41m3sftp1UVkLbEy6oxiNF45JSTi6LJ2/akA4Iv5knXLWOZw3HcEPXXOD27MosFzdrlFIzKqCIOtj01n3wvF7CafE8BmjGhCWzELlVcYtfwgqmycFUtON+x2wYe8tCEOoOZx3PDWdhFPQiGICqgHhudkIqofvLBlRZp1Kvi+/FjYfqGOzvv/iJ6h46Ibr9SMYw1D+YAhjEMrrBsB6uQtL/wjBzd4EYuzDlIBqQBHZzibfWffdOWu0/ZXsbKXRrKaEHA6Wgc8TcwMiB9PDyWiu1X0XywBvtOQa4XKa0UzNLIlfmCvGWuWFUyPi7lUDwjNkBmRmNCmX2iEuoxYCrY84XPdGQ+O2294ByYUPMep5FDxgkVRQB7tyamFTMt4rEqDfYwJ7BFYTltManTdgmHX5dFvpjWalWZdQfYjXPNWAcGEbldwXrr7R4NPtP+EU+GDzCKRRCLAQjDJcPjChNQb91vd+MjfT8q9rXX5+fn8BOkgnRRaUGXUAAAAASUVORK5CYII=" Reference="9PJs9vvyEk6stKsKr1m0xA/V8DLt9iqRku07dEH1pb0lQ" Selector="&lt;wnd app='powershell.exe' cls='ConsoleWindowClass' title='Windows PowerShell' /&gt;" Version="V2">
+      <TargetApp.Arguments>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.Arguments>
+      <TargetApp.WorkingDirectory>
+        <p:InArgument x:TypeArguments="x:String" />
+      </TargetApp.WorkingDirectory>
+      <imageRef attrName="InformativeScreenshot" originalValue="69b98e59f80991ab31fc4b9cbd0fc528.png" xmlns="">0lMSto-frrUaaMcPDG0AW2w</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
