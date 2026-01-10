@@ -2205,6 +2205,9 @@
                 "format": "uri"
               }
             }
+          },
+          "BreakTriggerScopeInArgument": {
+            "type": "string"
           }
         },
         "required": []

@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:umao="clr-namespace:UiPath.Mail.Activities.Outlook;assembly=UiPath.Mail.Activities" xmlns:umat="clr-namespace:UiPath.Mail.Activities.Triggers;assembly=UiPath.Mail.Activities" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="TriggerEventArgs" Type="InArgument(umat:MailEventInfo)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -201,12 +202,11 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <umao:OutlookMailMessagesTrigger BodyFilter="{x:Null}" Cc="{x:Null}" From="{x:Null}" SubjectFilter="{x:Null}" To="{x:Null}" Account="BicicletePentruTine@Outlook.com" BodyIsBuilderTabModified="False" BodyRegexOption="None" DisplayName="Outlook Desktop Mail Messages Trigger" Enabled="True" sap:VirtualizedContainerService.HintSize="874,197" sap2010:WorkflowViewState.IdRef="OutlookMailMessagesTrigger_1" Importance="Any" MailFolder="Inbox" MarkAsRead="False" SchedulingMode="Sequential" SubjectIsBuilderTabModified="False" SubjectRegexOption="None" TriggerId="45b8bcfd-7785-4a39-a9fc-38270530eb0d" WhenOutlookIsClosed="Open" />
-    <Sequence sap:VirtualizedContainerService.HintSize="874,16346" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="874,16380" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
         <Variable x:TypeArguments="x:String" Name="Total" />
         <Variable x:TypeArguments="x:String" Name="Tax_Amount" />
-        <Variable x:TypeArguments="x:Double" Name="Subtotal" />
         <Variable x:TypeArguments="x:String" Name="Company_Code" />
         <Variable x:TypeArguments="x:String" Name="Supplier_Name" />
         <Variable x:TypeArguments="x:String" Name="PO_Number" />
@@ -233,29 +233,29 @@
           </usau:BackupSlot>
         </ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
       </ui:GetOutlookMailMessages>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="840,16163" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="840,16197" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="838,16041" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="838,16075" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="804,15977" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="804,16011" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="802,15818" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="802,15852" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[currentMailMessage.Attachments.&#xA;    Any(Function(a) a.Name.ToLower.EndsWith(&quot;.pdf&quot;))]" sap:VirtualizedContainerService.HintSize="768,15754" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[currentMailMessage.Attachments.&#xA;    Any(Function(a) a.Name.ToLower.EndsWith(&quot;.pdf&quot;))]" sap:VirtualizedContainerService.HintSize="768,15788" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="766,15595" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="766,15629" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -263,7 +263,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:SaveMailAttachments Attachments="{x:Null}" ResourceAttachments="{x:Null}" DisplayName="Save Email Attachments" ExcludeInlineAttachments="False" FolderPath="C:\Users\Lucian\Desktop\Invoices\" sap:VirtualizedContainerService.HintSize="732,231" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="False" />
-                          <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[InvoicesLocation]" sap:VirtualizedContainerService.HintSize="732,15300" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                          <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[InvoicesLocation]" sap:VirtualizedContainerService.HintSize="732,15334" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                             <ui:ForEachFileX.Body>
                               <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                 <ActivityAction.Argument1>
@@ -272,15 +272,15 @@
                                 <ActivityAction.Argument2>
                                   <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                 </ActivityAction.Argument2>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="698,15008" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="698,15042" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[CurrentFile.Name.ToLower.EndsWith(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="664,14944" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If Condition="[CurrentFile.Name.ToLower.EndsWith(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="664,14978" sap2010:WorkflowViewState.IdRef="If_3">
                                     <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="662,14785" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="662,14819" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,13 +302,13 @@
                                             <InArgument x:TypeArguments="x:String">[outTxt + CurrentFile.Name.Replace(CurrentFile.Extension, "") +".txt"]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Windows PowerShell" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="628,14363" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Version="V2">
+                                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Windows PowerShell" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="628,14397" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Version="V2">
                                           <uix:NApplicationCard.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="626,14010" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="626,14044" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -317,7 +317,7 @@
                                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="592,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Text="[&quot;pdftotext &quot;&quot;&quot;+inPdf+ &quot;&quot;&quot; &quot;&quot;&quot;+insert+&quot;&quot;&quot;&quot;]" Version="V5" />
                                                 <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="592,405" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="HardwareEvents" ScopeIdentifier="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5" />
                                                 <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="592,117" sap2010:WorkflowViewState.IdRef="DeleteFileX_3" Path="[CurrentFile.FullName]" />
-                                                <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[outTxt]" sap:VirtualizedContainerService.HintSize="592,13174" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                                                <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[outTxt]" sap:VirtualizedContainerService.HintSize="592,13208" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                                                   <ui:ForEachFileX.Body>
                                                     <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                                       <ActivityAction.Argument1>
@@ -326,7 +326,7 @@
                                                       <ActivityAction.Argument2>
                                                         <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                                       </ActivityAction.Argument2>
-                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,12882" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,12916" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -375,7 +375,7 @@
                                                             <OutArgument x:TypeArguments="x:String">[Total]</OutArgument>
                                                           </Assign.To>
                                                           <Assign.Value>
-                                                            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Total, "\$([\d]+\.[\d]{2})").Groups(1).Value.Replace(".", ",")]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Text, "Total:\s*\$([0-9]+(?:\.[0-9]{2})?)").Groups(1).Value.Replace(".", ",")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
                                                         <ui:Matches BuilderPattern="Tax\s*\(19%\):\s*\$([\d.]+)" DisplayName="Find Matching Patterns" FirstMatch="[Tax_Amount]" sap:VirtualizedContainerService.HintSize="524,96" sap2010:WorkflowViewState.IdRef="Matches_7" Input="[Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;Tax\\s*\\(19%\\):\\s*\\$([\\d.]+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="Tax\s*\(19%\):\s*\$([\d.]+)" RegexOption="IgnoreCase, Compiled" />
@@ -387,13 +387,13 @@
                                                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Tax_Amount, "\$([\d]+\.[\d]{2})").Groups(1).Value.Replace(".", ",")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <uix:NSAPLogon AttachMode="ByInstance" CloseMode="Never" DelayBetweenRetries="0.5" DisplayName="SAP Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,10932" sap2010:WorkflowViewState.IdRef="NSAPLogon_1" Retries="5" ScopeGuid="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V2">
+                                                        <uix:NSAPLogon AttachMode="ByInstance" CloseMode="Never" DelayBetweenRetries="0.5" DisplayName="SAP Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,10966" sap2010:WorkflowViewState.IdRef="NSAPLogon_1" Retries="5" ScopeGuid="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V2">
                                                           <uix:NSAPLogon.Body>
                                                             <ActivityAction x:TypeArguments="x:Object">
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                               </ActivityAction.Argument>
-                                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,10745" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,10779" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:String" Name="MessageType" />
                                                                   <Variable x:TypeArguments="ss:SecureString" Default="[New System.Net.NetworkCredential(&quot;&quot;, &quot;Sixbones6b#&quot;).SecurePassword]" Name="sapPassword" />
@@ -422,7 +422,7 @@
                                                                   </uix:NClick.Target>
                                                                 </uix:NClick>
                                                                 <uix:NSAPReadStatusbar MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="488,282" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageText="[MessageType]" MessageType="[messageType]" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5" />
-                                                                <If Condition="[MessageType=&quot;0 Business Partner Found&quot;]" sap:VirtualizedContainerService.HintSize="488,9133" sap2010:WorkflowViewState.IdRef="If_5">
+                                                                <If Condition="[MessageType=&quot;0 Business Partner Found&quot;]" sap:VirtualizedContainerService.HintSize="488,9167" sap2010:WorkflowViewState.IdRef="If_5">
                                                                   <If.Then>
                                                                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,413" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                                       <sap:WorkflowViewStateService.ViewState>
@@ -439,7 +439,7 @@
                                                                     </Sequence>
                                                                   </If.Then>
                                                                   <If.Else>
-                                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,8586" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,8620" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,7 +555,7 @@
                                                                       </uix:NTypeInto>
                                                                       <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,456" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_19" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5" />
                                                                       <uix:NSAPReadStatusbar MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" MessageText="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="452,282" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_2" MessageType="[MessageType]" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5" />
-                                                                      <If Condition="[MessageType =&quot;E&quot;]" sap:VirtualizedContainerService.HintSize="452,1732" sap2010:WorkflowViewState.IdRef="If_6">
+                                                                      <If Condition="[MessageType =&quot;E&quot;]" sap:VirtualizedContainerService.HintSize="452,1766" sap2010:WorkflowViewState.IdRef="If_6">
                                                                         <If.Then>
                                                                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                                                             <sap:WorkflowViewStateService.ViewState>
@@ -573,64 +573,233 @@
                                                                           </Sequence>
                                                                         </If.Then>
                                                                         <If.Else>
-                                                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,1481" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,1219" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                                                             <Sequence.Variables>
+                                                                              <Variable x:TypeArguments="x:String" Name="Material" />
                                                                               <Variable x:TypeArguments="sc:IEnumerable" Name="itemMatches" />
+                                                                              <Variable x:TypeArguments="x:Int32" Default="0" Name="i" />
+                                                                              <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
                                                                             </Sequence.Variables>
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'TextField Amount'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
-                                                                              <uix:NClick.Target>
-                                                                                <uix:TargetAnchorable ContentHash="91zmbW3II06QCa-suiY9hg" DesignTimeRectangle="105, 555, 116, 20" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colTooltip='Amount' id='usr/subHEADER_AND_ITEMS:SAPLMR1M:6005/subITEMS:SAPLMR1M:6011/tabsITEMTAB/tabpITEMS_PO/ssubTABS:SAPLMR1M:6020/subITEM:SAPLMR1M:6310/tblSAPLMR1MTC_MR1M' tableRow='0' /&gt;" Guid="2dc3dac0-07a2-4513-ae14-320cc1c3c598" InformativeScreenshot="18459094d4c2fb145d6f76a0fdebb2b2.png" Reference="9PJs9vvyEk6stKsKr1m0xA/FcjzFPzr2EaBKHXxRi82cw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Incoming Invoice: Company Code IG16' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                                                                              </uix:NClick.Target>
-                                                                            </uix:NClick>
-                                                                            <ui:Matches FirstMatch="{x:Null}" BuilderPattern="([A-Z]{4}\d{4})\s*[–-]\s*([^\r\n]+)\s+(\d+)\s+\$?([\d.,]+)\s+\$?([\d.,]+)" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="488,92" sap2010:WorkflowViewState.IdRef="Matches_8" Input="[Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;([A-Z]{4}\\d{4})\\s*[–-]\\s*([^\\r\\n]+)\\s+(\\d+)\\s+\\$?([\\d.,]+)\\s+\\$?([\\d.,]+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([A-Z]{4}\d{4})\s*[–-]\s*([^\r\n]+)\s+(\d+)\s+\$?([\d.,]+)\s+\$?([\d.,]+)" RegexOption="IgnoreCase, Compiled" Result="[itemMatches]" />
-                                                                            <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each currentMatch" sap:VirtualizedContainerService.HintSize="488,671" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[itemMatches]">
+                                                                            <ui:Matches FirstMatch="{x:Null}" BuilderPattern="([A-Z]{4}\d{4})\s*[–-]\s*([^\r\n]+)\s+(\d+)\s+\$?([\d.,]+)\s+\$?([\d.,]+)" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="416,96" sap2010:WorkflowViewState.IdRef="Matches_8" Input="[Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;([A-Z]{4}\\d{4})\\s*[–-]\\s*([^\\r\\n]+)\\s+(\\d+)\\s+\\$?([\\d.,]+)\\s+\\$?([\\d.,]+)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([A-Z]{4}\d{4})\s*[–-]\s*([^\r\n]+)\s+(\d+)\s+\$?([\d.,]+)\s+\$?([\d.,]+)" RegexOption="IgnoreCase, Compiled" Result="[itemMatches]" />
+                                                                            <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each currentMatch" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[itemMatches]">
                                                                               <ui:ForEach.Body>
                                                                                 <ActivityAction x:TypeArguments="str:Match">
                                                                                   <ActivityAction.Argument>
                                                                                     <DelegateInArgument x:TypeArguments="str:Match" Name="currentMatch" />
                                                                                   </ActivityAction.Argument>
-                                                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,540" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,3102" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                       </scg:Dictionary>
                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="452,127" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[currentMatch.Groups(1).Value]" />
-                                                                                    <uix:NSAPTableCellScope ColumnNames="{x:Null}" ColumnName="Material" DisplayName="Table Cell Scope 'TableControl SAPLMR1MTC…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,349" sap2010:WorkflowViewState.IdRef="NSAPTableCellScope_1" RowType="FirstEmptyRow" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
-                                                                                      <uix:NSAPTableCellScope.Body>
-                                                                                        <ActivityAction x:TypeArguments="x:Object">
+                                                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Material'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,198" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
+                                                                                      <uix:NClick.Target>
+                                                                                        <uix:TargetAnchorable ContentHash="X3IZvYqbrUmYHZ5Fs5GBog" DesignTimeRectangle="613, 534, 123, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colTooltip='Material' id='usr/subHEADER_AND_ITEMS:SAPLMR1M:6005/subITEMS:SAPLMR1M:6011/tabsITEMTAB/tabpITEMS_PO/ssubTABS:SAPLMR1M:6020/subITEM:SAPLMR1M:6310/tblSAPLMR1MTC_MR1M' /&gt;" Guid="9ba4f926-f073-4155-a3a7-ccffa87a2f31" InformativeScreenshot="055d57ef1b664ade0fa15b4f34f27c91.png" Reference="9PJs9vvyEk6stKsKr1m0xA/HROpOPzaH0CwXuiAfoRmVA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Incoming Invoice: Company Code IG16' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                                                                      </uix:NClick.Target>
+                                                                                    </uix:NClick>
+                                                                                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="488,809" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                                                                      <ui:InterruptibleWhile.Body>
+                                                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,678" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,452" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_26" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Down)][u(hk)]" Version="V5" />
+                                                                                          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                                                            <Assign.To>
+                                                                                              <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                                                                                            </Assign.To>
+                                                                                            <Assign.Value>
+                                                                                              <InArgument x:TypeArguments="x:Int32">[i+1]</InArgument>
+                                                                                            </Assign.Value>
+                                                                                          </Assign>
+                                                                                        </Sequence>
+                                                                                      </ui:InterruptibleWhile.Body>
+                                                                                      <ui:InterruptibleWhile.Condition>
+                                                                                        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="count&gt;i" />
+                                                                                      </ui:InterruptibleWhile.Condition>
+                                                                                    </ui:InterruptibleWhile>
+                                                                                    <Assign sap:VirtualizedContainerService.HintSize="488,179" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                                                      <Assign.To>
+                                                                                        <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+                                                                                      </Assign.To>
+                                                                                      <Assign.Value>
+                                                                                        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                                                                                      </Assign.Value>
+                                                                                    </Assign>
+                                                                                    <Assign sap:VirtualizedContainerService.HintSize="488,179" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                                                      <Assign.To>
+                                                                                        <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                                                      </Assign.To>
+                                                                                      <Assign.Value>
+                                                                                        <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+                                                                                      </Assign.Value>
+                                                                                    </Assign>
+                                                                                    <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each currentMatch" sap:VirtualizedContainerService.HintSize="488,1677" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[itemMatches]">
+                                                                                      <ui:ForEach.Body>
+                                                                                        <ActivityAction x:TypeArguments="str:Match">
                                                                                           <ActivityAction.Argument>
-                                                                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                                            <DelegateInArgument x:TypeArguments="str:Match" Name="currentMatch" />
                                                                                           </ActivityAction.Argument>
-                                                                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1551" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
+                                                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_20" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]c[u(ctrl)][u(hk)]" Version="V5">
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                            </uix:NKeyboardShortcuts>
+                                                                                            <ui:GetFromClipboard TimeoutMS="{x:Null}" DisplayName="Get From Clipboard" sap:VirtualizedContainerService.HintSize="452,61" sap2010:WorkflowViewState.IdRef="GetFromClipboard_2">
+                                                                                              <ui:GetFromClipboard.Result>
+                                                                                                <OutArgument x:TypeArguments="x:String">[Material]</OutArgument>
+                                                                                              </ui:GetFromClipboard.Result>
+                                                                                            </ui:GetFromClipboard>
+                                                                                            <If Condition="[currentMatch.Groups(1).Value = Material]" sap:VirtualizedContainerService.HintSize="452,1369" sap2010:WorkflowViewState.IdRef="If_7">
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                              <If.Then>
+                                                                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,1141" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                                                                  <Sequence.Variables>
+                                                                                                    <Variable x:TypeArguments="x:String" Name="rawAmount" />
+                                                                                                  </Sequence.Variables>
+                                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                    </scg:Dictionary>
+                                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_22" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][d(shift)][k(Tab)][u(shift)][u(hk)]" Version="V5">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                  </uix:NKeyboardShortcuts>
+                                                                                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_23" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][d(shift)][k(Tab)][u(shift)][u(hk)]" Version="V5">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                  </uix:NKeyboardShortcuts>
+                                                                                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_24" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][d(shift)][k(Tab)][u(shift)][u(hk)]" Version="V5">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                  </uix:NKeyboardShortcuts>
+                                                                                                  <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                                                                    <Assign.To>
+                                                                                                      <OutArgument x:TypeArguments="x:String">[rawAmount]</OutArgument>
+                                                                                                    </Assign.To>
+                                                                                                    <Assign.Value>
+                                                                                                      <InArgument x:TypeArguments="x:String">[currentMatch.Groups(5).Value.Replace("$","").Replace(".",",")]</InArgument>
+                                                                                                    </Assign.Value>
+                                                                                                  </Assign>
+                                                                                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Text="[currentMatch.Groups(3).Value]" Version="V5" />
+                                                                                                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_25" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][d(shift)][k(Tab)][u(shift)][u(hk)]" Version="V5">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                  </uix:NKeyboardShortcuts>
+                                                                                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Text="[rawAmount]" Version="V5" />
+                                                                                                  <ui:Break sap:VirtualizedContainerService.HintSize="416,52" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                                                                                </Sequence>
+                                                                                              </If.Then>
+                                                                                              <If.Else>
+                                                                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                    </scg:Dictionary>
+                                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                                </Sequence>
+                                                                                              </If.Else>
+                                                                                            </If>
                                                                                           </Sequence>
                                                                                         </ActivityAction>
-                                                                                      </uix:NSAPTableCellScope.Body>
-                                                                                      <uix:NSAPTableCellScope.Target>
-                                                                                        <uix:TargetAnchorable ContentHash="KpLuw2tWL0ej9bVOUl4c-g" DesignTimeRectangle="37, 531, 822, 232" ElementType="Table" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subHEADER_AND_ITEMS:SAPLMR1M:6005/subITEMS:SAPLMR1M:6011/tabsITEMTAB/tabpITEMS_PO/ssubTABS:SAPLMR1M:6020/subITEM:SAPLMR1M:6310/tblSAPLMR1MTC_MR1M' /&gt;" Guid="8dfbec89-ce38-42f3-bf17-6e20e1d0959b" InformativeScreenshot="e8475498c51f9b62c9dcd56713901609.png" Reference="9PJs9vvyEk6stKsKr1m0xA/WbCTySPPB0KJ-ApDkTvy3Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Incoming Invoice: Company Code IG16' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                                                                                      </uix:NSAPTableCellScope.Target>
-                                                                                    </uix:NSAPTableCellScope>
+                                                                                      </ui:ForEach.Body>
+                                                                                    </ui:ForEach>
                                                                                   </Sequence>
                                                                                 </ActivityAction>
                                                                               </ui:ForEach.Body>
                                                                             </ui:ForEach>
-                                                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="488,123" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Invoice number is &quot; + InvoiceNumber + &quot; and  Date is  &quot; + InvoiceDate + &quot; the PO is  &quot; + PO_Number + &quot; the Supplier Id  is  &quot; + SupplierID + &quot; Supplier Name &quot; + Supplier_Name]" />
-                                                                            <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="[“The invoice has been successfully registered in the system. Thank you.”]" DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_8" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
+                                                                            <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                                              <Assign.To>
+                                                                                <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                                                                              </Assign.To>
+                                                                              <Assign.Value>
+                                                                                <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                                                                              </Assign.Value>
+                                                                            </Assign>
+                                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_27" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:NKeyboardShortcuts>
+                                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_28" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:NKeyboardShortcuts>
+                                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_29" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:NKeyboardShortcuts>
+                                                                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_30" InteractionMode="HardwareEvents" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </uix:NKeyboardShortcuts>
+                                                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Post (Ctrl+S)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
+                                                                              <uix:NClick.Target>
+                                                                                <uix:TargetAnchorable ContentHash="qK0UtHu63E-JxLM8QT4Iww" DesignTimeRectangle="230, 50, 22, 22" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" Guid="0663d8e8-3e05-4d6a-8fd8-07989ba54309" InformativeScreenshot="c5eed0aba1690a2414d432dfec862536.png" Reference="9PJs9vvyEk6stKsKr1m0xA/sUxxZZaDAkiDpN48MmsXwA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Incoming Invoice: Company Code IG16' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                                                              </uix:NClick.Target>
+                                                                            </uix:NClick>
+                                                                            <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="[“The invoice has been successfully registered in the system. Thank you.”]" DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_8" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
                                                                               <ui:ReplyToOutlookMailMessage.Files>
                                                                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                                                               </ui:ReplyToOutlookMailMessage.Files>
                                                                             </ui:ReplyToOutlookMailMessage>
-                                                                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_8" MailFolder="Deleted Items" MailMessage="[currentMailMessage]" />
+                                                                            <ui:MoveOutlookMessage Account="{x:Null}" DisplayName="Move Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_8" MailFolder="Deleted Items" MailMessage="[currentMailMessage]" />
                                                                           </Sequence>
                                                                         </If.Else>
                                                                       </If>
