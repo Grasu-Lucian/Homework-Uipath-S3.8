@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="vsehv7s_8EeuxPkFiOLZpg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="37, 531, 822, 232" ElementType="Table" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap id='usr/subHEADER_AND_ITEMS:SAPLMR1M:6005/subITEMS:SAPLMR1M:6011/tabsITEMTAB/tabpITEMS_PO/ssubTABS:SAPLMR1M:6020/subITEM:SAPLMR1M:6310/tblSAPLMR1MTC_MR1M' /&gt;" Guid="81a40ce3-0053-4c2a-918f-62bce7aa8d75" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Enter Incoming Invoice: Company Code IG16' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="e8475498c51f9b62c9dcd56713901609.png" xmlns="">047CM2b_q6U2Y55wIdz7GwQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">SAPTableCellScope</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
