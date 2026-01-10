@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Jw_5hmm8uEy4CA24oeysKQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1, 209, 333, 16" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='ListBox' /&gt;&lt;ctrl name='V1 (Input tax VAT 19% deductible)' role='list item' /&gt;" Guid="597de0b9-bd64-4c0e-968a-1613a81eccf5" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='Afx:*' title='listbox shell' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b28a486c7f58f64baaa72f8b14cbe66e.png" xmlns="">0Gi19Pc9n6Eu67wDKSrRX7A</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

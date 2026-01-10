@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="G51iW2W0SkONJILK0UHh8w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1, 209, 333, 16" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='ListBox' /&gt;&lt;ctrl name='B4 (Output Tax 24%, Invoice after Fiscal Inspection)' role='list item' /&gt;" Guid="e8cf473c-3b7d-4683-977d-251282321ba4" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='Afx:*' title='listbox shell' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="fc9e6c676621f3a92a791c94f76ded3d.png" xmlns="">0Ljmkc2OZ4ECUp48XYhnn8w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">KeyboardShortcut</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

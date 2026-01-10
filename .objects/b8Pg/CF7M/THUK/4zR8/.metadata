@@ -1,0 +1,13 @@
+﻿{
+  "Name": "B4 (Output Tax 24%, Inv…",
+  "Type": "Element",
+  "Id": "4zR8ACiGVUOx_3qUsSMenQ",
+  "Reference": "9PJs9vvyEk6stKsKr1m0xA/4zR8ACiGVUOx_3qUsSMenQ",
+  "ParentRef": "9PJs9vvyEk6stKsKr1m0xA/THUKGnZJBE6Becn0BpnGyw",
+  "Created": "2026-01-10T17:39:50.8046045Z",
+  "Updated": "2026-01-10T17:39:50.8046045Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
