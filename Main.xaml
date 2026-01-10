@@ -90,6 +90,7 @@
       <x:String>UiPath.OCR.Contracts</x:String>
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -175,7 +176,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="849,7889" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="863,8595" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -183,7 +184,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <umao:OutlookMailMessagesTrigger BodyFilter="{x:Null}" Cc="{x:Null}" From="{x:Null}" SubjectFilter="{x:Null}" To="{x:Null}" Account="BicicletePentruTine@Outlook.com" BodyIsBuilderTabModified="False" BodyRegexOption="None" DisplayName="Outlook Desktop Mail Messages Trigger" Enabled="True" sap:VirtualizedContainerService.HintSize="838,197" sap2010:WorkflowViewState.IdRef="OutlookMailMessagesTrigger_1" Importance="Any" MailFolder="Inbox" MarkAsRead="False" SchedulingMode="Sequential" SubjectIsBuilderTabModified="False" SubjectRegexOption="None" TriggerId="45b8bcfd-7785-4a39-a9fc-38270530eb0d" WhenOutlookIsClosed="Open" />
-    <Sequence sap:VirtualizedContainerService.HintSize="838,7638" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="838,8344" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="InvoiceDate" />
         <Variable x:TypeArguments="x:Double" Name="Total" />
@@ -215,29 +216,29 @@
           </usau:BackupSlot>
         </ui:GetOutlookMailMessages.ConnectionDetailsBackupSlot>
       </ui:GetOutlookMailMessages>
-      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="804,7432" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
+      <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each currentMailMessage" sap:VirtualizedContainerService.HintSize="804,8138" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emails]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="snm:MailMessage">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="currentMailMessage" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="802,7310" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="802,8016" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="768,7246" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[currentMailMessage.From.Address.ToLower = &quot;grasu.lucian20@yahoo.com&quot;]" sap:VirtualizedContainerService.HintSize="768,7952" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="766,7087" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="766,7793" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[currentMailMessage.Attachments.&#xA;    Any(Function(a) a.Name.ToLower.EndsWith(&quot;.pdf&quot;))]" sap:VirtualizedContainerService.HintSize="732,7023" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[currentMailMessage.Attachments.&#xA;    Any(Function(a) a.Name.ToLower.EndsWith(&quot;.pdf&quot;))]" sap:VirtualizedContainerService.HintSize="732,7729" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="730,6864" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="730,7570" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -245,7 +246,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:SaveMailAttachments Attachments="{x:Null}" ResourceAttachments="{x:Null}" DisplayName="Save Email Attachments" ExcludeInlineAttachments="False" FolderPath="C:\Users\Lucian\Desktop\Invoices\" sap:VirtualizedContainerService.HintSize="696,231" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[currentMailMessage]" OverwriteExisting="False" />
-                          <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[InvoicesLocation]" sap:VirtualizedContainerService.HintSize="696,6569" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                          <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[InvoicesLocation]" sap:VirtualizedContainerService.HintSize="696,7275" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                             <ui:ForEachFileX.Body>
                               <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                 <ActivityAction.Argument1>
@@ -254,15 +255,15 @@
                                 <ActivityAction.Argument2>
                                   <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                 </ActivityAction.Argument2>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="662,6277" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="662,6983" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[CurrentFile.Name.ToLower.EndsWith(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="628,6213" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If Condition="[CurrentFile.Name.ToLower.EndsWith(&quot;.pdf&quot;)]" sap:VirtualizedContainerService.HintSize="628,6919" sap2010:WorkflowViewState.IdRef="If_3">
                                     <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="626,6054" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="626,6760" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -284,13 +285,13 @@
                                             <InArgument x:TypeArguments="x:String">[outTxt + CurrentFile.Name.Replace(CurrentFile.Extension, "") +".txt"]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Windows PowerShell" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,5632" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Version="V2">
+                                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Windows PowerShell" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,6338" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Version="V2">
                                           <uix:NApplicationCard.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="590,5279" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="590,5985" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,7 +300,7 @@
                                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="556,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Text="[&quot;pdftotext &quot;&quot;&quot;+inPdf+ &quot;&quot;&quot; &quot;&quot;&quot;+insert+&quot;&quot;&quot;&quot;]" Version="V5" />
                                                 <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="556,405" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="HardwareEvents" ScopeIdentifier="7325d3f6-36cf-48b9-b610-7398c3beeaf2" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5" />
                                                 <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="556,117" sap2010:WorkflowViewState.IdRef="DeleteFileX_3" Path="[CurrentFile.FullName]" />
-                                                <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[outTxt]" sap:VirtualizedContainerService.HintSize="556,4443" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+                                                <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[outTxt]" sap:VirtualizedContainerService.HintSize="556,5149" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
                                                   <ui:ForEachFileX.Body>
                                                     <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                                                       <ActivityAction.Argument1>
@@ -308,7 +309,7 @@
                                                       <ActivityAction.Argument2>
                                                         <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                                       </ActivityAction.Argument2>
-                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,4155" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,4861" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -351,13 +352,13 @@
                                                             <InArgument x:TypeArguments="x:String">[SupplierID.Replace("Supplier ID:", "").Trim]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <uix:NSAPLogon AttachMode="ByInstance" CloseMode="Never" DelayBetweenRetries="0.5" DisplayName="SAP Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2759" sap2010:WorkflowViewState.IdRef="NSAPLogon_1" Retries="5" ScopeGuid="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V2">
+                                                        <uix:NSAPLogon AttachMode="ByInstance" CloseMode="Never" DelayBetweenRetries="0.5" DisplayName="SAP Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3465" sap2010:WorkflowViewState.IdRef="NSAPLogon_1" Retries="5" ScopeGuid="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V2">
                                                           <uix:NSAPLogon.Body>
                                                             <ActivityAction x:TypeArguments="x:Object">
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                               </ActivityAction.Argument>
-                                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2485" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3191" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:String" Name="MessageType" />
                                                                   <Variable x:TypeArguments="ss:SecureString" Default="[New System.Net.NetworkCredential(&quot;&quot;, &quot;Sixbones6b#&quot;).SecurePassword]" Name="sapPassword" />
@@ -369,6 +370,11 @@
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <uix:NSAPLogin Client="303" DisplayName="SAP Login" sap:VirtualizedContainerService.HintSize="452,385" sap2010:WorkflowViewState.IdRef="NSAPLogin_1" IsSecure="True" Language="EN" Option="Single" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" SecurePassword="[sapPassword]" Username="INFOGEST-016" Version="V5" />
+                                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,249" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
+                                                                  <uix:NClick.Target>
+                                                                    <uix:TargetAnchorable ContentHash="DVeWWTRUz02sNvPhTwzvIw" DesignTimeRectangle="325, 119, 75, 23" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd ctrlid='2' title='OK' /&gt;" Guid="75a2cdba-9222-41b4-902e-4d2601794a74" InformativeScreenshot="3676f679909657daa91278b6aa82b4f5.png" Reference="9PJs9vvyEk6stKsKr1m0xA/TPa60GkXT0W04FlyZcWRUQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP GUI for Windows 770' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                                                  </uix:NClick.Target>
+                                                                </uix:NClick>
                                                                 <uix:NSAPCallTransaction DisplayName="Call Transaction" sap:VirtualizedContainerService.HintSize="452,235" sap2010:WorkflowViewState.IdRef="NSAPCallTransaction_1" Prefix="/n" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Transaction="BP" Version="V5" />
                                                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'TextField Business Part…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Text="[SupplierID]" Version="V5">
                                                                   <uix:NTypeInto.Target>
@@ -381,7 +387,7 @@
                                                                   </uix:NClick.Target>
                                                                 </uix:NClick>
                                                                 <uix:NSAPReadStatusbar MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" MessageType="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="452,282" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageText="[MessageType]" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5" />
-                                                                <If Condition="[MessageType=&quot;0 Business Partner Found&quot;]" sap:VirtualizedContainerService.HintSize="452,1071" sap2010:WorkflowViewState.IdRef="If_5">
+                                                                <If Condition="[MessageType=&quot;0 Business Partner Found&quot;]" sap:VirtualizedContainerService.HintSize="452,1528" sap2010:WorkflowViewState.IdRef="If_5">
                                                                   <If.Then>
                                                                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                                       <sap:WorkflowViewStateService.ViewState>
@@ -398,13 +404,28 @@
                                                                     </Sequence>
                                                                   </If.Then>
                                                                   <If.Else>
-                                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,528" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,985" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Invoice number is &quot; + InvoiceNumber + &quot; and  Date is  &quot; + InvoiceDate + &quot; the PO is  &quot; + PO_Number + &quot; the Supplier Id  is  &quot; + SupplierID + &quot;&quot;]" />
+                                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Name 1Last Name(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="[UiPath.UIAutomationNext.Enums.NMouseButton.Right]" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
+                                                                        <uix:NClick.Target>
+                                                                          <uix:TargetAnchorable ContentHash="mBR3COxFW0OMyegn4t6nUg" DesignTimeRectangle="467, 338, 252, 19" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;sap colName='MCNAME1' id='usr/subSCREEN_3000_RESIZING_AREA:SAPLBUS_LOCATOR:2240/subSCREEN_1010_LEFT_AREA:SAPLBUS_LOCATOR:3100/tabsGS_SCREEN_3100_TABSTRIP/tabpBUS_LOCATOR_TAB_02/ssubSCREEN_3100_TABSTRIP_AREA:SAPLBUS_LOCATOR:3202/subSCREEN_3200_SEARCH_AREA:SAPLBUS_LOCATOR:3211/subSCREEN_3200_RESULT_AREA:SAPLBUPA_DIALOG_JOEL:1060/ssubSCREEN_1060_RESULT_AREA:SAPLBUPA_DIALOG_JOEL:1080/cntlSCREEN_1080_CONTAINER/shellcont/shell' /&gt;" Guid="09261b05-64c2-4c07-a518-5c0ae528a8a8" InformativeScreenshot="09f4965b9b07a601db1401ac34bf6527.png" Reference="9PJs9vvyEk6stKsKr1m0xA/upaMEGvoL0uCDqH_zdcIgQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Maintain Business Partner' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                                                        </uix:NClick.Target>
+                                                                      </uix:NClick>
+                                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Copy Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="077c3400-7af4-42d3-abfb-2225d237d4e0" Version="V5">
+                                                                        <uix:NClick.Target>
+                                                                          <uix:TargetAnchorable ContentHash="pnmkpzUoZUKwSCKC35Zbjw" DesignTimeRectangle="3, 3, 211, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='1' /&gt;" Guid="98e7522a-26ae-4524-991f-93e5a3b036f1" InformativeScreenshot="25627d24caa2d91f21505759a9bbbe06.png" Reference="9PJs9vvyEk6stKsKr1m0xA/ZgXQGbSEgkiO8I2JAMWrRw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32768' idx='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                                                        </uix:NClick.Target>
+                                                                      </uix:NClick>
+                                                                      <ui:GetFromClipboard TimeoutMS="{x:Null}" DisplayName="Get From Clipboard" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="GetFromClipboard_1">
+                                                                        <ui:GetFromClipboard.Result>
+                                                                          <OutArgument x:TypeArguments="x:String">[Supplier_Name]</OutArgument>
+                                                                        </ui:GetFromClipboard.Result>
+                                                                      </ui:GetFromClipboard>
+                                                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Invoice number is &quot; + InvoiceNumber + &quot; and  Date is  &quot; + InvoiceDate + &quot; the PO is  &quot; + PO_Number + &quot; the Supplier Id  is  &quot; + SupplierID + &quot; Supplier Name &quot; + Supplier_Name]" />
                                                                       <ui:ReplyToOutlookMailMessage AddBcc="{x:Null}" AddCc="{x:Null}" AddTo="{x:Null}" NewSubject="{x:Null}" ReplyFrom="{x:Null}" TimeoutMS="{x:Null}" Body="[“The invoice has been successfully registered in the system. Thank you.”]" DisplayName="Reply To Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_4" Importance="Normal" MailMessage="[currentMailMessage]" ReplyAll="False">
                                                                         <ui:ReplyToOutlookMailMessage.Files>
                                                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Maintain Business Partner",
+  "Type": "Screen",
+  "Id": "0bMzF8i4Y0yxuVd43KExmw",
+  "Reference": "9PJs9vvyEk6stKsKr1m0xA/0bMzF8i4Y0yxuVd43KExmw",
+  "ParentRef": "9PJs9vvyEk6stKsKr1m0xA/CF7MYZIxWU2xOjFk2__THg",
+  "Created": "2026-01-10T14:54:39.572092Z",
+  "Updated": "2026-01-10T14:54:39.572092Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
